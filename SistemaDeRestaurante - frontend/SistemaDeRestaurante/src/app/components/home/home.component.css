@@ -1,0 +1,13 @@
+div, div img {
+    vertical-align:middle;
+    text-align:center;
+    position: relative;
+    top: 65px;
+}
+
+div h5 {
+    vertical-align:middle;
+    text-align:center;
+    position: relative;
+    top: 75px;
+}

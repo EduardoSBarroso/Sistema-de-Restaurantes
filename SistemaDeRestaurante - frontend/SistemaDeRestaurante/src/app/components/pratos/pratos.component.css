@@ -1,0 +1,31 @@
+div  {
+    position: relative;
+    width: 650px;
+}
+
+select {
+    position: relative;
+    width: 650px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    font-size: 12px;
+    border-collapse: collapse;
+    border-color: black;
+    width: 100%;
+    position: relative;
+    top: 70px;
+    right: 155px;
+    overflow: scroll;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 3px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

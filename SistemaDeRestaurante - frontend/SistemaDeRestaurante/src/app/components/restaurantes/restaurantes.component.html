@@ -1,0 +1,37 @@
+<h2>Restaurantes</h2>
+<div class="input-field col s6">
+    <form role="form" (ngSubmit)="selecionar()" >
+        <i class="material-icons prefix">restaurant</i>
+        <input type="text" id="nome" name="nome" [(ngModel)]="nome" placeholder="Restaurante"><br><br>
+        <a href="cadastroRestaurante" class="waves-effect waves-light btn"><i class="material-icons left">add</i>cadastrar novo restaurante</a>
+        <button style="width:300px;" type="submit" class="waves-effect waves-light btn"><i class="material-icons left">search</i>pesquisar</button>
+    </form>
+</div>
+
+<div class="container" *ngIf="!existsRestaurante" >
+  <table>
+          <th style="width:10px"><a href="#"></a></th>
+          <th style="width:10px"><a href=""></a></th>
+          <th>Restaurantes</th>
+          <tr *ngFor="let restaurante of restaurantes">
+              <td><a (click)="excluir(restaurante.id)" href="/restaurantes"><i class="material-icons center">delete</i></a></td>
+              <td><a [routerLink]="['/editarRestaurante/'+restaurante.id]"><i class="material-icons center">edit</i></a></td>
+              <td>{{ restaurante.nome }}</td>
+          </tr>
+  </table> 
+</div>
+
+<div class="container" *ngIf="existsRestaurante">
+    <table>
+            <th style="width:10px"><a href="#"></a></th>
+            <th style="width:10px"><a href=""></a></th>
+            <th>Restaurantes</th>
+            <tr ng-repeat="let restaurante of restaurantes">
+                <td><a (click)="excluir(restaurante.id)" href="/restaurantes"><i class="material-icons center">delete</i></a></td>
+                <td><a [routerLink]="['/editarRestaurante/'+restaurante.id]"><i class="material-icons center">edit</i></a></td>
+                <td>{{ restaurante.nome }}</td>
+            </tr>
+    </table> 
+  </div>
+
+      

@@ -1,0 +1,9 @@
+<h2>Editar Restaurante</h2>
+<div class="input-field col s6">
+    <form role="form" (ngSubmit)="atualizar()" >
+        <i class="material-icons prefix">restaurant</i>
+        <input type="text" id="nome" name="nome" [(ngModel)]="restaurante.nome"><br><br>
+        <a href="restaurantes" class="waves-effect waves-light btn"><i class="material-icons left">cancel</i>cancelar</a>
+        <button style="width:200px" type="submit" class="waves-effect waves-light btn"><i class="material-icons left">save</i>salvar</button>
+    </form>
+</div>

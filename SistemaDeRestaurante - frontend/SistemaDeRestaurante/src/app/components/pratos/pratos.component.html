@@ -1,0 +1,28 @@
+<h2>Pratos</h2>
+<div>
+    <form #formRestaurante="ngForm" (ngSubmit)="consultarPratos()">
+        <label for="id">Restaurantes</label><br><br>
+        <select class="browser-default" id="id" name="id" [(ngModel)]="id">
+                <option value="" disabled selected>Selecione o Restaurante...</option> 
+                <option *ngFor="let restaurante of restaurantes"  [value]="restaurante.id">{{ restaurante.nome }}</option>
+            </select><br><br>
+        <a style="top:30px" href="cadastroPrato" class="waves-effect waves-light btn"><i class="material-icons left">add</i>cadastrar novo prato</a>
+        <button style="width:300px; top:30px" type="submit" class="waves-effect waves-light btn"><i class="material-icons left">search</i>
+            pesquisar
+        </button>
+    </form>
+</div>
+<div class="container" *ngIf="pratos">
+  <table style="top:70px">
+          <th style="width:10px"></th>
+          <th style="width:10px"></th>
+          <th>Prato</th>
+          <th>Preco</th>
+          <tr *ngFor="let prato of pratos" >
+              <td><a (click)="excluir(prato.id)" href="/pratos"><i class="material-icons center">delete</i></a></td>
+              <td><a [routerLink]="['/editarPrato/'+prato.id]"><i class="material-icons center">edit</i></a></td>
+              <td>{{ prato.nome }}</td>
+              <td>{{ prato.preco }}</td>
+          </tr>
+  </table> 
+</div>
